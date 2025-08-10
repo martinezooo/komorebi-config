@@ -1,0 +1,14 @@
+[
+  {
+    "kind": "exe",
+    "id": "notepad.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe", 
+    "id": "calculator.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  }
+]

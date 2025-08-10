@@ -1,0 +1,21 @@
+# Exclude original komorebi repository (documentation only)
+komorebi-dont change/
+
+# VS Code settings (optional - uncomment if you don't want to share)
+# .vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*.bak
+*.backup
