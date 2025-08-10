@@ -1,9 +1,40 @@
 # Configuration Profiles Development Plan
 
 ## Overview
-This document outlines the planned configuration profiles for different GPD Pocket 4 usage scenarios.
+This document outlines the development plan for different GPD Pocket 4 usage scenarios.
+
+**Current Status**: Case 3 (Extended Setup) is fully implemented and active.
 
 ## Profile Details
+
+### ✅ Case 3: Extended Setup (IMPLEMENTED)
+**Target**: GPD Pocket 4 + 19" portable monitor (2x HD resolution)
+**Status**: ✅ **Fully Configured**
+
+**Implementation Details**:
+- Multi-monitor configuration with `display_index_preferences`
+- Monitor 0 (External): 6 workspaces for productivity
+- Monitor 1 (GPD): 2 workspaces for focus/quick tasks
+- Automatic application routing via `initial_workspace_rules`
+- Development tools → External monitor
+- Quick utilities → GPD monitor
+
+**Current Configuration**:
+```json
+{
+  "display_index_preferences": {
+    "0": "8947848",           // External monitor (HSX0324)
+    "1": "HSX0324-5&16867cf9&0&UID256"  // GPD built-in
+  },
+  "initial_workspace_rules": [
+    // Development tools go to external monitor
+    {"kind": "Exe", "id": "devenv.exe", "monitor_index": 0, "workspace_name": "CODE"},
+    {"kind": "Exe", "id": "Code.exe", "monitor_index": 0, "workspace_name": "CODE"},
+    // Quick tools go to GPD monitor  
+    {"kind": "Exe", "id": "notepad.exe", "monitor_index": 1, "workspace_name": "FOCUS"}
+  ]
+}
+```
 
 ### Case 1: Laptop Only (laptop-only.json)
 **Target**: GPD Pocket 4 standalone, 7" display

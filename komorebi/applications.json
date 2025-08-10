@@ -1,6 +1,42 @@
 [
   {
     "kind": "exe",
+    "id": "devenv.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
+    "id": "Code.exe", 
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
+    "id": "firefox.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
+    "id": "chrome.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
+    "id": "WindowsTerminal.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
+    "id": "pwsh.exe",
+    "matching_strategy": "Legacy",
+    "float_identifiers": []
+  },
+  {
+    "kind": "exe",
     "id": "notepad.exe",
     "matching_strategy": "Legacy",
     "float_identifiers": []

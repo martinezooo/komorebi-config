@@ -11,15 +11,34 @@ Optimized for **GPD Pocket 4** with multiple display configurations.
 
 This setup supports multiple usage scenarios for GPD Pocket 4:
 
-| Case | Setup | Description | Optimal Settings | Status |
-|------|-------|-------------|------------------|--------|
-| **Case 1** | 📱 Laptop Only | GPD Pocket 4 standalone<br/>Small 7" display | • Minimal padding (10px)<br/>• 3-4 workspaces<br/>• Simple layouts (BSP, Stack)<br/>• Larger fonts | ⚠️ Planned |
-| **Case 2** | 🔄 Tablet Mode | GPD Pocket 4 in tablet orientation<br/>Touch-optimized | • Touch-friendly spacing<br/>• Portrait layouts<br/>• Simplified navigation<br/>• Auto-hide elements | ⚠️ Planned |
-| **Case 3** | 🖥️ Extended Setup | GPD Pocket 4 + 19" portable monitor<br/>Dual screen productivity | • Multi-monitor config<br/>• Extended workspace layouts<br/>• Cross-monitor movement<br/>• Different DPI handling | ⚠️ Planned |
-| **Case 4** | 🏠 Docked Setup | GPD Pocket 4 + external peripherals<br/>Desktop replacement | • Full desktop experience<br/>• Multiple external displays<br/>• Optimized for productivity | 💭 Future |
+| Case | Setup | Description | Status | Configuration |
+|------|-------|-------------|--------|---------------|
+| **Case 1** | 📱 Laptop Only | GPD Pocket 4 standalone<br/>Small 7" display | ⚠️ Planned | Minimal padding, 3-4 workspaces |
+| **Case 2** | 🔄 Tablet Mode | GPD Pocket 4 in tablet orientation<br/>Touch-optimized | ⚠️ Planned | Portrait layouts, touch-friendly |
+| **Case 3** | 🖥️ Extended Setup | GPD Pocket 4 + 19" portable monitor<br/>Dual screen productivity | ✅ **Active** | Multi-monitor rules configured |
+| **Case 4** | 🏠 Docked Setup | GPD Pocket 4 + external peripherals<br/>Desktop replacement | 💭 Future | Full desktop experience |
 
-### Current Configuration
-The current setup is a **baseline configuration** that works across all scenarios. Specific optimizations for each case will be added as separate configuration profiles.
+### Current Configuration (Case 3)
+The active configuration is optimized for **Case 3**: GPD Pocket 4 + external monitor setup.
+
+**Monitor Assignment:**
+- **Monitor 0** (External 19"): Primary productivity monitor with 6 workspaces
+  - `CODE` - Development tools (Visual Studio, VS Code)
+  - `WEB` - Web browsers (Firefox, Chrome)  
+  - `TERM` - Terminals and command line tools
+  - `DOCS` - Documentation and reading
+  - `TOOLS` - Utility applications
+  - `MEDIA` - Media and entertainment
+- **Monitor 1** (GPD Pocket 4): Secondary monitor with 2 workspaces
+  - `FOCUS` - Single-window focus mode (Notepad, small tools)
+  - `QUICK` - Quick access apps (Calculator, temp windows)
+
+**Automatic Window Placement:**
+- Visual Studio/VS Code → External monitor `CODE` workspace
+- Firefox/Chrome → External monitor `WEB` workspace
+- Windows Terminal/PowerShell → External monitor `TERM` workspace
+- Notepad → GPD monitor `FOCUS` workspace
+- Calculator → GPD monitor `QUICK` workspace
 
 ## 📁 Structure
 
@@ -104,34 +123,31 @@ The current setup is a **baseline configuration** that works across all scenario
 ## 🔧 Customization
 
 Edit the configuration files to match your preferences:
-- `komorebi/komorebi.json` - Window manager settings
-- `komorebi/applications.json` - App-specific behaviors
+- `komorebi/komorebi.json` - Window manager settings with monitor-specific rules
+- `komorebi/applications.json` - App-specific behaviors and float rules
 - `whkdrc` - Hotkey bindings
 - `yasb/config.yaml` - Status bar configuration
 - `yasb/styles.css` - Status bar styling
 
-### Configuration Profiles (Planned)
-```
-komorebi/
-├── komorebi.json                 # Current baseline config
-├── profiles/
-│   ├── laptop-only.json         # Case 1: Small screen optimized
-│   ├── tablet-mode.json         # Case 2: Touch-friendly
-│   ├── dual-monitor.json        # Case 3: Extended setup
-│   └── docked-desktop.json      # Case 4: Full desktop
-└── scripts/
-    ├── switch-profile.ps1       # Profile switching utility
-    └── detect-displays.ps1      # Auto-detect display setup
+### Adding New Applications
+To add automatic workspace assignment for new applications:
+
+1. Find the executable name: `Get-Process | Where-Object {$_.ProcessName -like "*appname*"}`
+2. Add to `komorebi.json` in the `initial_workspace_rules` section:
+```json
+{
+  "kind": "Exe",
+  "id": "your-app.exe",
+  "matching_strategy": "Legacy", 
+  "monitor_index": 0,
+  "workspace_name": "DESIRED_WORKSPACE"
+}
 ```
 
-### Switching Between Profiles (Planned)
-```powershell
-# Manual profile switching
-.\scripts\switch-profile.ps1 -Profile "laptop-only"
-
-# Auto-detect and switch based on connected displays  
-.\scripts\detect-displays.ps1 -AutoSwitch
-```
+### Monitor Configuration
+- Monitor indexes are set via `display_index_preferences` using monitor serial numbers
+- Current setup: Monitor 0 (external), Monitor 1 (GPD built-in)
+- Change `monitor_index` in workspace rules to assign apps to different monitors
 
 ## 📝 License
 
