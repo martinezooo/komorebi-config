@@ -14,51 +14,47 @@
     "unfocused_border": "Base03",
     "bar_accent": "Base0D"
   },
-  "display_index_preferences": {
-    "0": "8947848",
-    "1": "HSX0324-5&16867cf9&0&UID256"
-  },
   "initial_workspace_rules": [
     {
       "kind": "Exe",
       "id": "devenv.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "CODE"
     },
     {
       "kind": "Exe",
       "id": "Code.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "CODE"
     },
     {
       "kind": "Exe",
       "id": "firefox.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "WEB"
     },
     {
       "kind": "Exe",
       "id": "chrome.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "WEB"
     },
     {
       "kind": "Exe",
       "id": "WindowsTerminal.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "TERM"
     },
     {
       "kind": "Exe",
       "id": "pwsh.exe",
       "matching_strategy": "Legacy",
-      "monitor_index": 0,
+      "monitor_index": 1,
       "workspace_name": "TERM"
     },
     {
@@ -70,18 +66,50 @@
     },
     {
       "kind": "Exe",
-      "id": "calculator.exe",
+      "id": "CalculatorApp.exe",
       "matching_strategy": "Legacy",
       "monitor_index": 1,
       "workspace_name": "QUICK"
     }
   ],
+  "window_container_behaviour": "Create",
+  "auto_manage_workspace_creation": true,
+  "new_window_behaviour": "Create",
+  "default_workspace_creation": true,
   "monitors": [
     {
       "workspaces": [
         {
-          "name": "CODE",
+          "name": "GPD-1",
           "layout": "BSP"
+        },
+        {
+          "name": "GPD-2",
+          "layout": "BSP"
+        },
+        {
+          "name": "GPD-3",
+          "layout": "BSP"
+        },
+        {
+          "name": "GPD-4",
+          "layout": "BSP"
+        },
+        {
+          "name": "GPD-5",
+          "layout": "BSP"
+        },
+        {
+          "name": "GPD-6",
+          "layout": "BSP"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "CODE",
+          "layout": "Columns"
         },
         {
           "name": "WEB",
@@ -113,7 +141,19 @@
         },
         {
           "name": "QUICK",
-          "layout": "VerticalStack"
+          "layout": "BSP"
+        },
+        {
+          "name": "NEW-1",
+          "layout": "BSP"
+        },
+        {
+          "name": "NEW-2", 
+          "layout": "BSP"
+        },
+        {
+          "name": "NEW-3",
+          "layout": "BSP"
         }
       ]
     }

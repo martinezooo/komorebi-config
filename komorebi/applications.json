@@ -1,50 +1,74 @@
-[
-  {
-    "kind": "exe",
-    "id": "devenv.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+{
+  "devenv.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "devenv.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "Code.exe", 
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "Code.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "Code.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "firefox.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "firefox.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "firefox.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "chrome.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "chrome.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "chrome.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "WindowsTerminal.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "WindowsTerminal.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "WindowsTerminal.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "pwsh.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "pwsh.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "pwsh.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe",
-    "id": "notepad.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "notepad.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "notepad.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   },
-  {
-    "kind": "exe", 
-    "id": "calculator.exe",
-    "matching_strategy": "Legacy",
-    "float_identifiers": []
+  "calculator.exe": {
+    "manage": [
+      {
+        "kind": "Exe",
+        "id": "calculator.exe",
+        "matching_strategy": "Legacy"
+      }
+    ]
   }
-]
+}

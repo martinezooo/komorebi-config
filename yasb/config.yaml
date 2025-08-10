@@ -11,7 +11,7 @@ komorebi:
 bars:
   primary-bar:
     enabled: true
-    screens: ["*"]
+    screens: [ "*" ]
     class_name: "yasb-bar"
     alignment:
       position: "top"
@@ -38,29 +38,14 @@ bars:
       bottom: 0
       right: 6
     widgets:
-      left: [
-        "home",
-        "komorebi_workspaces",
-        "komorebi_active_layout",
-        "active_window",
-      ]
-      center: [
-        "clock",
-        "apps"
-      ]
-      right: [
-        "media",
-        "weather",
-        "microphone",
-        "volume",
-        "notifications",
-        "power_menu"
-        ]
+      left: [ "home", "komorebi_workspaces", "komorebi_active_layout", "active_window" ]
+      center: [ "clock", "apps" ]
+      right: [ "media", "weather", "microphone", "volume", "notifications", "power_menu" ]
 widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "<span>\udb81\udf17</span>"
+      label: "<span>󰜗</span>"
       menu_list:
       - { title: "User Home", path: "~" }
       - { title: "Download", path: "~\\Downloads" }
@@ -86,10 +71,10 @@ widgets:
       thumbnail_corner_radius: 0
       thumbnail_edge_fade: true
       icons:
-        prev_track: "\udb81\udcae"
-        next_track: "\udb81\udcad"
-        play: "\udb81\udc0a"
-        pause: "\udb80\udfe4"
+        prev_track: "󰒮"
+        next_track: "󰒭"
+        play: "󰐊"
+        pause: "󰏤"
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -112,36 +97,32 @@ widgets:
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
-      label_offline: "\u23fc Offline"
-      label_workspace_btn: "\udb81\udc3d"
-      label_workspace_active_btn: ""
-      label_workspace_populated_btn: "\udb81\udc3e"
-      label_default_name: "{index}"
+      label_offline: "⏼ Offline"
+      label_workspace_btn: "{name}"
+      label_workspace_active_btn: "{name}"
+      label_workspace_populated_btn: "{name}"
+      label_default_name: "{name}"
       label_zero_index: false
       hide_empty_workspaces: false
-      hide_if_offline: true
+      hide_if_offline: false
       animation: true
+      enable_scroll_switching: true
       container_padding:
         top: 0
         left: 8
         bottom: 0
         right: 8
+      btn_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [1, 1]
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
       hide_if_offline: true
       label: "{icon}"
-      layouts:
-        [
-          "bsp",
-          "columns",
-          "rows",
-          "grid",
-          "vertical_stack",
-          "horizontal_stack",
-          "ultrawide_vertical_stack",
-          "right_main_vertical_stack",
-        ]
+      layouts: [ "bsp", "columns", "rows", "grid", "vertical_stack", "horizontal_stack", "ultrawide_vertical_stack", "right_main_vertical_stack" ]
       layout_icons:
         bsp: "BSP"
         columns: "COLS"
@@ -176,21 +157,21 @@ widgets:
       callbacks:
         on_left: "toggle_label"
       icons:
-        sunnyDay: "\ue30d"
-        clearNight: "\ue32b"
-        cloudyDay: "\ue312"
-        cloudyNight: "\ue311"
-        rainyDay: "\ue308"
-        rainyNight: "\ue333"
-        snowyIcyDay: "\ue30a"
-        snowyIcyNight: "\ue335"
-        blizzardDay: "\udb83\udf36"
-        blizzardNight: "\udb83\udf36"
-        foggyDay: "\ue303"
-        foggyNight: "\ue346"
-        thunderstormDay: "\ue30f"
-        thunderstormNight: "\ue338"
-        default: "\uebaa"
+        sunnyDay: ""
+        clearNight: ""
+        cloudyDay: ""
+        cloudyNight: ""
+        rainyDay: ""
+        rainyNight: ""
+        snowyIcyDay: ""
+        snowyIcyNight: ""
+        blizzardDay: "󰼶"
+        blizzardNight: "󰼶"
+        foggyDay: ""
+        foggyNight: ""
+        thunderstormDay: ""
+        thunderstormNight: ""
+        default: ""
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -198,11 +179,11 @@ widgets:
       label_alt: "{volume}"
       tooltip: false
       volume_icons:
-        - "\ueee8"
-        - "\uf026"
-        - "\uf027"
-        - "\uf027"
-        - "\uf028"
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
       callbacks:
         on_left: "toggle_mute"
         on_right: "exec cmd.exe /c start ms-settings:sound"
@@ -212,8 +193,8 @@ widgets:
       label: "<span>{icon}</span> {level}"
       label_alt: "<span>{icon}</span> {level}%"
       icons:
-        normal: "\udb80\udf6c"
-        muted: "\udb80\udf6d"
+        normal: "󰍬"
+        muted: "󰍭"
       callbacks:
         on_left: "toggle_mute"
         on_middle: "toggle_label"
@@ -221,19 +202,19 @@ widgets:
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
-      label: "\uf011"
+      label: ""
       uptime: True
       blur: False
       blur_background: True
       animation_duration: 200
       button_row: 5
       buttons:
-        shutdown: ["\uf011", "Shut Down"]
-        restart: ["\uead2", "Restart"]
-        signout: ["\udb80\udf43", "Sign out"]
-        hibernate: ["\uf28e", "Hibernate"]
-        sleep: ["\u23fe", "Sleep"]
-        cancel: ["", "Cancel"]
+        shutdown: [ "", "Shut Down" ]
+        restart: [ "", "Restart" ]
+        signout: [ "󰍃", "Sign out" ]
+        hibernate: [ "", "Hibernate" ]
+        sleep: [ "⏾", "Sleep" ]
+        cancel: [ "", "Cancel" ]
   apps:
     type: "yasb.applications.ApplicationsWidget"
     options:
@@ -244,13 +225,13 @@ widgets:
         right: 8
       label: "{data}"
       app_list:
-        - { icon: "\uf422", launch: "search" }
-        - { icon: "\ueb03", launch: "cmd /c Taskmgr" }
-        - { icon: "\udb80\ude39",launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" }
+      - { icon: "", launch: "search" }
+      - { icon: "", launch: "cmd /c Taskmgr" }
+      - { icon: "󰈹", launch: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" }
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span>\uf476</span> {count}"
+      label: "<span></span> {count}"
       label_alt: "{count} notifications"
       hide_empty: true
       tooltip: false

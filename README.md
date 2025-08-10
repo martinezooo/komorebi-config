@@ -15,23 +15,26 @@ This setup supports multiple usage scenarios for GPD Pocket 4:
 |------|-------|-------------|--------|---------------|
 | **Case 1** | 📱 Laptop Only | GPD Pocket 4 standalone<br/>Small 7" display | ⚠️ Planned | Minimal padding, 3-4 workspaces |
 | **Case 2** | 🔄 Tablet Mode | GPD Pocket 4 in tablet orientation<br/>Touch-optimized | ⚠️ Planned | Portrait layouts, touch-friendly |
-| **Case 3** | 🖥️ Extended Setup | GPD Pocket 4 + 19" portable monitor<br/>Dual screen productivity | ✅ **Active** | Multi-monitor rules configured |
+| **Case 3** | 🎮 Gaming Setup | GPD Pocket 4 + Arzopa Z1FC 16.1" 144Hz Gaming Monitor<br/>Dual screen productivity with FreeSync | ✅ **Active** | Multi-monitor rules configured |
 | **Case 4** | 🏠 Docked Setup | GPD Pocket 4 + external peripherals<br/>Desktop replacement | 💭 Future | Full desktop experience |
 
 ### Current Configuration (Case 3)
 The active configuration is optimized for **Case 3**: GPD Pocket 4 + external monitor setup.
 
 **Monitor Assignment:**
-- **Monitor 0** (External 19"): Primary productivity monitor with 6 workspaces
+- **Monitor 0** (Arzopa Z1FC Gaming Monitor 16.1" 144Hz): Primary productivity monitor with 6 workspaces
+  - *144Hz FreeSync Premium for smooth window transitions*
   - `CODE` - Development tools (Visual Studio, VS Code)
   - `WEB` - Web browsers (Firefox, Chrome)  
   - `TERM` - Terminals and command line tools
   - `DOCS` - Documentation and reading
   - `TOOLS` - Utility applications
   - `MEDIA` - Media and entertainment
-- **Monitor 1** (GPD Pocket 4): Secondary monitor with 2 workspaces
+- **Monitor 1** (GPD Pocket 4 built-in 7"): Secondary monitor with 5 workspaces
+  - *Note: Shows as "UNKNOWN" device - this is normal for internal eDP displays*
   - `FOCUS` - Single-window focus mode (Notepad, small tools)
   - `QUICK` - Quick access apps (Calculator, temp windows)
+  - `NEW-1`, `NEW-2`, `NEW-3` - Additional workspaces for new applications
 
 **Automatic Window Placement:**
 - Visual Studio/VS Code → External monitor `CODE` workspace
@@ -39,6 +42,21 @@ The active configuration is optimized for **Case 3**: GPD Pocket 4 + external mo
 - Windows Terminal/PowerShell → External monitor `TERM` workspace
 - Notepad → GPD monitor `FOCUS` workspace
 - Calculator → GPD monitor `QUICK` workspace
+
+**Handling New/Undefined Applications:**
+Since komorebi doesn't support a global default monitor, new applications typically open on Monitor 0 (external). To use the GPD monitor for focused work:
+
+1. **Move to GPD monitor**: `Alt+Shift+H` (moves current window to left monitor)
+2. **Switch to GPD workspaces**: 
+   - `Alt+7` for FOCUS workspace (single-window mode)
+   - `Alt+8` for QUICK workspace (calculator-style apps)
+   - Additional workspaces: NEW-1, NEW-2, NEW-3 (accessible via komorebic commands)
+3. **All GPD workspaces use BSP layout** for distraction-free single-window focus
+
+**Enhanced Case 3 Features:**
+- 5 workspaces available on GPD monitor (FOCUS, QUICK, NEW-1, NEW-2, NEW-3)
+- BSP layout on all GPD workspaces prevents window splitting
+- Use `setup-enhanced-case3.ps1` script to configure additional workspaces
 
 ## 📁 Structure
 
